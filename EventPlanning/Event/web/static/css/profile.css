@@ -1,0 +1,271 @@
+body {
+    background: #D4BFFF !important;
+}
+.header {
+    position: absolute;
+    display: flex;
+    /* justify-content: center; */
+    background-color: #A393C7;
+    height: 15vh;
+    width: 100%;
+}
+.name {
+    align-items: center;
+    display: flex;
+    width: auto;
+    color: white;
+    font-size: 48px;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    padding-left: 50px;
+}
+
+.log {
+    justify-content: right;
+    align-items: center;
+    display: flex;
+    width: auto;
+    color: white;
+    font-size: 36px;
+
+}
+.log_out {
+    justify-content: right;
+    align-items: center;
+    display: flex;
+    width: auto;
+    font-size: 36px;
+}
+.buttonn {
+    height: 80px;
+    width: 200px;
+    border: 3px solid #ffffff;
+    background-color: #857AC9;
+    color: white;
+    border-radius: 10px;
+}
+.buttonn:hover{
+    background-color: #7168ac;
+    border: 3px solid #ffffff;
+}
+
+.menu {
+    position: relative;
+    top: 188px;
+}
+.btn_m {
+    background-color: #D4BFFF;
+    border: 1px solid #D4BFFF;
+    border-radius: 10px;
+    color: #fff;
+}
+.btn_m:hover{
+    background-color: #a28dca;
+    border: 3px solid #D4BFFF;
+}
+.line {
+    /* position: fixed; */
+    /* top: 150px; */
+    background-color: #fff;
+    height: 3px;
+    width: 98%;
+    position: absolute;
+    left: 15px;
+    right: 0px;
+    bottom: 1px;
+    top: 255px;
+}
+
+
+
+
+.bttn1 {
+    position: absolute;
+    left: 0px;
+    /* background-color: blue; */
+}
+.bttn2 {
+    position: absolute;
+    left: 80px;
+
+}
+
+
+
+.titl {
+    align-items: center;
+    display: flex;
+    position:absolute;
+    /* left: 100px; */
+    left: 200px;
+    top: -20px;
+    /* background-color: red; */
+}
+.nam {
+    height: 80px;
+    width: 700px;
+    background-color: #EDDCFF;
+    color: #857AC9;
+    border-radius: 15px;
+    border: 3px solid #EDDCFF;
+    font-size: 32px;
+
+}
+input {
+    align-items: center;
+    display: flex;
+    padding-left: 30px;
+}
+input:focus {
+    outline: #E1DCFF;
+    border-color: #E1DCFF;
+}
+::placeholder {color: #857AC9; font-size: 32px;}
+
+
+
+
+
+.div {
+    position: relative;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    top: 300px;
+    height: 380px;
+    width: 380px;
+    /* background-color: #635B9A; */
+}
+.cards {
+    position: relative;
+    /* top: 300px; */
+    background-color: #EDDCFF;
+    height: 350px;
+    width: 350px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    /* left: 20px; */
+}
+
+.header_card {
+    position: absolute;
+    display: flex;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #A393C7;
+    height: 100px;
+    width: 330px;
+}
+.mer_title {
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    position: relative;
+    font-size: 28px;
+    color: #fff;
+}
+.time {
+    position: relative;
+    top: 150px;
+    font-size: 30px;
+    color: #635B9A;
+}
+
+.qr {
+    position: relative;
+    top: 190px;
+}
+.btn_card {
+    /* position: relative; */
+    height: 80px;
+    width: 150px;
+    background-color: #9887FC;
+    border: 1px solid #9887FC;
+    border-radius: 10px;
+    color: #fff;
+}
+button:hover{
+    background-color: #7168ac;
+    /* border: 3px solid #ffffff; */
+}
+
+/* .btn_card:active {
+    border: 1px solid #9887FC;
+
+} */
+
+body::-webkit-scrollbar {
+    width: 10px; /* ширина scrollbar */
+    }
+
+    body::-webkit-scrollbar-track {
+    background: #e6d9ff; /* цвет дорожки */
+    }
+
+    body::-webkit-scrollbar-thumb {
+    background-color: #A393C7; /* цвет плашки */
+    border-radius: 10px; /* закругления плашки */
+    border: 2px solid white; /*padding вокруг плашки*/
+    }
+
+@media (max-width: 576px) {
+    .header {
+        position: absolute;
+        display: flex;
+        /* justify-content: center; */
+        background-color: #A393C7;
+        height: 12vh;
+        width: 100%;
+    }
+    .name {
+        display: none;
+        visibility: hidden;
+    }
+    .log {
+        justify-content: left;
+        align-items: center;
+        display: flex;
+        width: auto;
+        color: white;
+        font-size: 24px;
+    }
+    .login {
+        padding-left: 20px;
+    }
+    .log_out {
+        justify-content: right;
+        align-items: center;
+        display: flex;
+        width: auto;
+        font-size: 20px;
+    }
+    .button {
+        height: 40px;
+        width: 100px;
+        border: 1px solid #ffffff;
+        background-color: #857AC9;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .cards {
+        position: relative;
+        top: 150px;
+        background-color: #EDDCFF;
+        height: 200px;
+        width: 250px;
+        border: 1px solid #ffffff;
+        border-radius: 15px;
+    }
+    .header_card {
+        position: absolute;
+        display: flex;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-color: #A393C7;
+        height: 12vh;
+        width: 100%;
+    }
+}

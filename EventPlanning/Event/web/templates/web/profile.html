@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Основная странца</title>
+</head>
+<body>
+    <main class="main">
+        <div class="container-fluid">
+            <div class="header row p-0">
+                <div class="name col-6">
+                    <label class="title">Планировка мероприятий</label>
+                </div>
+                <div class="log col-md-3 col">
+                    <label class="login">{{ user.username }}</label>
+                </div>
+                <form class="log_out col-md-3 col" method="post" action="{% url 'logout' %}?next=/web/profile">
+                    {% csrf_token %}
+                    <button class="buttonn" type="submit">Выход</button>
+                </form>
+            </div>
+
+            <form class="menu row" method="post">
+                {% csrf_token %}
+                <div class="bttn1 col-1">
+                    <button class="btn_m" type="submit" name="add"><img src="{% static 'img/Plus.png' %}"></button>
+                </div>
+                <div class="bttn2 col-1">
+                    <button class="btn_m" type="submit" name="delete"><img src="{% static 'img/musor.png' %}"></button>
+                </div>
+                <div class="titl col-10">
+                    <input class="nam" type="text" maxlength="25" placeholder="Название мероприятия" name="title_events">
+                </div>
+
+            </form>
+            <div class="line"></div>
+
+            <div class="cont">
+                <div class="wer row row-cols-5">
+                    {% for el in events1 %}
+                    <!--  -->
+                    <div class="div col ps-4">
+                        <div class="cards row col">
+                            <div class="header_card">
+                                <div class="mer_title">
+                                    <label class="mer_tit">{{ el.title_events }}</label>
+                                </div>
+                            </div>
+                            <div class="all">
+                                <div class="time">
+                                    <label class="timme">{{ el.datetime }}</label>
+                                </div>
+                                <div class="qr row">
+                                    <div class="btttn col-6">
+                                        <button class="btn_card" onclick="location.href='{% url 'web:event' title=el.title_events %}'"><img src="{% static 'img/11.png' %}"></button>
+                                    </div>
+                                    <div class="btttn col-6">
+                                        <button class="btn_card" onclick="location.href='{% url 'web:add1' title=el.title_events %}'"><img src="{% static 'img/pan.png' %}"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+    <title>Добавление мероприятия</title>
+</head>
+<body>
+    <main class="main">
+        <div class="bttn col-3 ps-md-5 pt-md-5">
+                    <button class="buttonq" onclick="location.href='/web/profile'">Отмена</button>
+                </div>
+        <form class="container-fluid" method="post">
+            {% csrf_token %}
+            <div class="up row">
+
+                <div class="title ps-5 col pt-md-5">
+                    <input class="name" type="text" maxlength="25" placeholder="Название мероприятия" name="title" value="{{ title }}" readonly></input>
+                </div>
+            </div>
+            <div class="menu row ps-5">
+                <div class="obj col-11 ps-5 row">
+                    <div class="container ps-1 col-8">
+                        <div class="row row-cols-2" >
+
+                            <div class="one col">
+                                <input class="nazv" type="text" maxlength="20" placeholder="Название" name="name">
+                            </div>
+                            <div class="two col">
+                                <input class="so" type="time" maxlength="5" placeholder="со скольки" name="start_at">
+                            </div>
+                            <div class="four col">
+                                <input class="mesto" type="text" maxlength="25" placeholder="Место" name="place">
+                            </div>
+                            <div class="five col">
+                                <input class="do" type="time" maxlength="5" placeholder="до скольки" name="end_at">
+                            </div>
+
+                                <input class="do" type="text" maxlength="5" placeholder="до скольки" name="web_buyer_id" value="{{ user.id }}" style="display: none; visibility: hidden;">
+                                <span>{{ error }}</span>
+                        </div>
+                    </div>
+                    <div class="container2 col-4">
+                        <div class="row">
+                            <div class="three col-12">
+                                <textarea class="opis" type="text" maxlength="150" placeholder="Описание" name="full_text" cols="40" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bttnn col-1 ps-4">
+                    <button class="btn_m" type="submit"><img src="{% static 'img/add_plus.png' %}"></button>
+                </div>
+
+            </div>
+
+        </form>
+        {% for el in records %}
+            <div class="list">
+                <div class="di">
+                        <div class="ccar row p-4">
+                        <div class="tit col-3">
+                            <label class="tit_list">{{ el.name }}</label>
+                        </div>
+                        <div class="mes col-2">
+                            <label class="mes_list">{{ el.place }}</label>
+                        </div>
+                        <div class="tim_so_do col-2">
+                            <label class="tim_list">{{ el.start_at }} - {{ el.end_at }}</label>
+                        </div>
+                        <div class="opi col-4">
+                            <label class="opi_list">{{ el.full_text }}</label>
+                        </div>
+                        <div class="huy col-1">
+                            <div class="mus">
+                                <button class="btn_musor" type="submit" onclick="location.href='{% url 'web:add2' name=el.name title=title %}'"><img src="{% static 'img/musor.png' %}"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+    </main>
+</body>
+</html>
