@@ -5,7 +5,7 @@ class Buyer(AbstractUser):
 
 class Events(models.Model):
     title = models.CharField('Название мероприятия', max_length=25)
-    name = models.CharField('Название собятия', max_length=25, unique=True)
+    name = models.CharField('Название собятия', max_length=25)
     place = models.CharField('Место', max_length=50)
     start_at = models.CharField('Начало', max_length=5)
     end_at = models.CharField('Конец', max_length=5)
@@ -17,7 +17,7 @@ class Events(models.Model):
 
 
 class UserHasEvent(models.Model):
-    title_events = models.CharField('Название мероприятия', max_length=25, unique=True)
+    title_events = models.CharField('Название мероприятия', max_length=25)
     web_buyer_id = models.IntegerField()
     datetime = models.DateTimeField(auto_now_add=True)
 

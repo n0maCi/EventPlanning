@@ -56,10 +56,10 @@
                                 </div>
                                 <div class="qr row">
                                     <div class="btttn col-6">
-                                        <button class="btn_card" onclick="location.href='{% url 'web:event' title=el.title_events %}'"><img src="{% static 'img/11.png' %}"></button>
+                                        <button class="btn_card" onclick="location.href='{% url 'web:event' title=el.title_events username=user.username %}'"><img src="{% static 'img/11.png' %}"></button>
                                     </div>
                                     <div class="btttn col-6">
-                                        <button class="btn_card" onclick="location.href='{% url 'web:add1' title=el.title_events %}'"><img src="{% static 'img/pan.png' %}"></button>
+                                        <button class="btn_card" onclick="location.href='{% url 'web:add1' title=el.title_events username=user.username %}'"><img src="{% static 'img/pan.png' %}"></button>
                                     </div>
                                 </div>
                             </div>
